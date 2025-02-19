@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/pxro
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://soupcan.pages.dev
+  * I am pxro (https://keybase.io/pxro) on keybase.
+  * I have a public key ASD6yH_lsta8y5--G0V9TaEjktAeZmX_GbRdIihInCThtgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120fac87fe5b2d6bccb9fbe1b457d4da12392d01e6665ff19b45d2228489c24e1b60a",
+      "host": "keybase.io",
+      "kid": "0120fac87fe5b2d6bccb9fbe1b457d4da12392d01e6665ff19b45d2228489c24e1b60a",
+      "uid": "012f3eddcbbde03b48e75d4ab7845c19",
+      "username": "pxro"
+    },
+    "merkle_root": {
+      "ctime": 1739970992,
+      "hash": "d9415851131beb5385b018003918058b70615580a6b2c6eae995f194451ab52bd1dbb77f1421badc81aefb1b2b45ad3eb7f879f0d6f5b341c4db26491513cd3c",
+      "hash_meta": "d3e96671fc2057f3c1a93b4559157731f6c7476c83f66dd00d360be070ba7f95",
+      "seqno": 26559017
+    },
+    "service": {
+      "entropy": "uIRotsrl9VrDPeZyM97BDRYX",
+      "hostname": "soupcan.pages.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.4.0"
+  },
+  "ctime": 1739971097,
+  "expire_in": 504576000,
+  "prev": "1aede979be161c9cc8739fd5e14483d80d288b8680044a096e1d6bc100820bbd",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg+sh/5bLWvMufvhtFfU2hI5LQHmZl/xm0XSIoSJwk4bYKp3BheWxvYWTESpcCBcQgGu3peb4WHJzIc5/V4USD2A0oi4aABEoJbh1rwQCCC73EIMNkRm5S7l/xHurhzqe09E7nQmAVwX7s5Boq+k3J0z0OAgHCo3NpZ8RA7bCnbrKwcPHsjBSznC9Rmn20wIX0PbkQu79pZ6angp/xSHYm0fu2G4iJXgbtP3oL6FmJ3FWf0Nmq9AwoG+AbAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDRtOVvE2C/GJBsOiFAAp2ZoDUm8e0Ii3aNSeJdpE+9jo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pxro
+
+==================================================================
