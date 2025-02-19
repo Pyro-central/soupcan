@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>SoupCan</title>
-    <link rel="icon" href="/brand/favicon.ico">
+    <link rel="icon" type="image/png" href="/brand/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body, .navbar, .container, .box {
-            display: flex;
-        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #111010;
             color: white;
+            display: flex;
             justify-content: center;
             align-items: center;
             height: calc(100vh - 50px);
         }
         .navbar {
+            display: flex;
             justify-content: flex-start;
             align-items: center;
             background: #111010;
@@ -30,6 +29,7 @@
         }
         .nav-links {
             list-style: none;
+            display: flex;
             margin: 0;
             padding: 0;
         }
@@ -47,6 +47,7 @@
             border-radius: 4px;
         }
         .container {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -62,7 +63,8 @@
             text-align: center;
             width: 75%;
             max-width: 1200px;
-            margin: -200px 0 20px;
+            margin-bottom: 20px;
+            margin-top: -200px;
         }
         .box-title {
             font-size: 2.5rem;
@@ -98,9 +100,11 @@
     </nav>
     <div class="container">
         <div class="box">
-            <div class="box-title">Leaderboard</div>
+            <div class="box-title">About:Blank</div>
             <button class="box-button" onclick="location.href='/e/leaderboard.html'">Click Me!</button>
         </div>
     </div>
+  
+        
 </body>
 </html>
