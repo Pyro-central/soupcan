@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SoupCan</title>
-        <link rel="icon" type="image/x-icon" href="/brand/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/brand/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -114,12 +114,12 @@
         .app-item {
             margin-top: 30px;
         }
-        #game-search-form {
+        #app-search-form {
             text-align: center;
             margin-top: 60px;
             border-radius: 10px;
         }
-        #game-searchbar {
+        #app-searchbar {
             display: inline-block;
             position: relative;
             width: 300px;
@@ -128,7 +128,7 @@
             background-color: #222222;
             border-radius: 10px;
         }
-        #game-search-input {
+        #app-search-input {
             width: calc(100% - 40px);
             height: 100%;
             padding-left: 40px;
@@ -139,7 +139,7 @@
             font-size: 1rem;
             border-radius: 10px;
         }
-        #game-search-icon {
+        #app-search-icon {
             position: absolute;
             top: 50%;
             left: 10px;
@@ -148,7 +148,7 @@
             font-size: 1.5rem;
         }
     </style>
-     <script src="/js/close-tab.js"></script>
+    <script src="/js/close-tab.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -162,10 +162,10 @@
             <li><a href="/p.html"><i class="fa-solid fa-handshake"></i></a></li>
         </ul>
     </nav>
-    <form id="game-search-form" autocomplete="off" autocapitalize="off">
-        <div id="game-searchbar">
-            <i class="fas fa-search" id="game-search-icon"></i>
-            <input id="game-search-input" type="text" placeholder="Search apps">
+    <form id="app-search-form" autocomplete="off" autocapitalize="off">
+        <div id="app-searchbar">
+            <i class="fas fa-search" id="app-search-icon"></i>
+            <input id="app-search-input" type="text" placeholder="Search apps">
         </div>
     </form>
     <div class="container">
@@ -201,15 +201,30 @@
         </div>
     </div>
     <script>
+        // Function to update the search bar placeholder
+        function updateSearchPlaceholder() {
+            const appItems = document.querySelectorAll('.image-item').length;
+            const searchInput = document.getElementById('app-search-input');
+            searchInput.placeholder = `Search ${appItems} apps`;
+        }
+
+        // Initial update
+        updateSearchPlaceholder();
+
+        // Add event listener to update the placeholder when new app icons are added
+        const config = { childList: true };
+        const observer = new MutationObserver(updateSearchPlaceholder);
+        observer.observe(document.querySelector('.container'), config);
+
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
         });
 
-        document.getElementById('game-search-input').addEventListener('input', function() {
+        document.getElementById('app-search-input').addEventListener('input', function() {
             var filter = this.value.toLowerCase();
-            var gameItems = document.querySelectorAll('.image-item');
+            var appItems = document.querySelectorAll('.image-item');
 
-            gameItems.forEach(function(item) {
+            appItems.forEach(function(item) {
                 var label = item.getAttribute('data-label').toLowerCase();
                 if (label.includes(filter)) {
                     item.style.display = '';
