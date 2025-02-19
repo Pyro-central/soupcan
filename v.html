@@ -141,7 +141,7 @@
 
         #searchbar {
             position: fixed;
-            top: 50%;
+            top: 30%; /* Move the search bar up */
             left: 50%;
             transform: translate(-50%, -50%);
             width: 600px;
@@ -182,6 +182,20 @@
             height: 44px;
         }
 
+        #info-box {
+            position: fixed;
+            top: 55%; /* Adjust to place the box below the search bar */
+            left: 50%;
+            transform: translate(-50%, -30%); /* Move down a bit to be below the search bar */
+            width: 600px;
+            height: 300px;
+            background-color: rgba(34, 34, 34, 0.6); /* 60 percent opacity */
+            border: transparent;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
         #uvf {
             width: 100%;
             height: calc(100% - 50px);
@@ -200,7 +214,6 @@
         .footer {
             color: white;
             text-align: center;
-
             margin-top: 50vh;
         }
     </style>
@@ -229,6 +242,8 @@
            <input id="ua" type="text" placeholder="Enter a password or phrase" class="form__input">
         </div>
     </form>
+    <div id="info-box">
+    </div>
     <div class="desc left-margin">
         <p id="ue"></p>
         <pre id="uc"></pre>
@@ -238,4 +253,14 @@
             document.querySelector('.navbar').classList.toggle('active');
         });
     </script>
-</body></html>
+    <script>
+        document.getElementById('ua').addEventListener('input', function() {
+            if (this.value.toLowerCase() === 'jamie') {
+                document.getElementById('info-box').innerHTML = '<img src="/secret/jamie.jpg" alt="">';
+            } else {
+                document.getElementById('info-box').innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
