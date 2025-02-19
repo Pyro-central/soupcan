@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SoupCan</title>
-        <link rel="icon" type="image/x-icon" href="/brand/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/brand/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -148,7 +148,7 @@
             font-size: 1.5rem;
         }
     </style>
-     <script src="/js/close-tab.js"></script>
+    <script src="/js/close-tab.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -247,7 +247,7 @@
                 <div class="label">Bad Ice Cream 3</div>
             </a>
         </div>
-         <div class="image-item app-item" data-label="Dante">
+        <div class="image-item app-item" data-label="Dante">
             <a href="/iframe/?url=/storage/games/dante/">
                 <img src="/storage/games/dante/splash.png" alt="Dante">
                 <div class="label">Dante</div>
@@ -339,6 +339,21 @@
         </div>
     </div>
     <script>
+        // Function to update the search bar placeholder
+        function updateSearchPlaceholder() {
+            const gameItems = document.querySelectorAll('.image-item').length;
+            const searchInput = document.getElementById('game-search-input');
+            searchInput.placeholder = `Search ${gameItems} games`;
+        }
+
+        // Initial update
+        updateSearchPlaceholder();
+
+        // Add event listener to update the placeholder when new game icons are added
+        const config = { childList: true };
+        const observer = new MutationObserver(updateSearchPlaceholder);
+        observer.observe(document.querySelector('.container'), config);
+
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
         });
