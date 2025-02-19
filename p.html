@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SoupCan</title>
-        <link rel="icon" type="image/x-icon" href="/brand/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/brand/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -147,7 +147,7 @@
             font-size: 1.5rem;
         }
     </style>
-  <script src="/js/close-tab.js"></script>
+    <script src="/js/close-tab.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -194,15 +194,30 @@
         </div>
     </div>
     <script>
+        // Function to update the search bar placeholder
+        function updateSearchPlaceholder() {
+            const partnerItems = document.querySelectorAll('.image-item').length;
+            const searchInput = document.getElementById('game-search-input');
+            searchInput.placeholder = `Search ${partnerItems} partners`;
+        }
+
+        // Initial update
+        updateSearchPlaceholder();
+
+        // Add event listener to update the placeholder when new partner icons are added
+        const config = { childList: true };
+        const observer = new MutationObserver(updateSearchPlaceholder);
+        observer.observe(document.querySelector('.container'), config);
+
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
         });
 
         document.getElementById('game-search-input').addEventListener('input', function() {
             var filter = this.value.toLowerCase();
-            var gameItems = document.querySelectorAll('.image-item');
+            var partnerItems = document.querySelectorAll('.image-item');
 
-            gameItems.forEach(function(item) {
+            partnerItems.forEach(function(item) {
                 var label = item.getAttribute('data-label').toLowerCase();
                 if (label.includes(filter)) {
                     item.style.display = '';
